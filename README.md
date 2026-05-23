@@ -9,7 +9,7 @@
 
 **A fully responsive, professional cafe website with 3D sliding animations, dark luxury theme, and interactive features — built with pure HTML, CSS & JavaScript.**
 
-[🌐 Live Demo](https://powerisvansh.github.io/cafe) · [📁 View Code](https://github.com/Powerisvansh/cafe) · [🐛 Report Bug](https://github.com/Powerisvansh/cafe/issues)
+[🌐 Live Demo](https://powerisvansh.github.io/cafe/) · [📁 View Code](https://github.com/Powerisvansh/cafe) · [🐛 Report Bug](https://github.com/Powerisvansh/cafe/issues)
 
 </div>
 
@@ -142,7 +142,7 @@ cafe/
 5. Your site will be live at:
 
 ```
-https://powerisvansh.github.io/cafe
+https://powerisvansh.github.io/cafe/
 ```
 
 ---
