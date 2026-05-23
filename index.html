@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Cozy Cafe</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">☕ Cozy Cafe</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-cta" onclick="openModal()">Reserve a Table</button>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-content" data-parallax>
+      <span class="hero-tag">Est. 2010 · Premium Coffee</span>
+      <h1 class="hero-title">Where Every Sip<br/><span>Tells a Story</span></h1>
+      <p class="hero-sub">Handcrafted brews, artisan pastries, and a warm atmosphere crafted just for you.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="scrollToMenu()">Explore Menu</button>
+        <button class="btn-outline" onclick="openModal()">Book a Table</button>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll Down</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat"><span class="stat-num" data-target="12">0</span><span>+</span><p>Years of Excellence</p></div>
+    <div class="stat"><span class="stat-num" data-target="48">0</span><span>+</span><p>Signature Drinks</p></div>
+    <div class="stat"><span class="stat-num" data-target="200">0</span><span>k+</span><p>Happy Customers</p></div>
+    <div class="stat"><span class="stat-num" data-target="5">0</span><span>★</span><p>Average Rating</p></div>
+  </div>
+
+  <!-- 3D MENU CAROUSEL -->
+  <section class="menu-section" id="menu">
+    <div class="section-header reveal">
+      <span class="section-tag">Our Specialties</span>
+      <h2>Crafted With Passion</h2>
+      <p>Each item is prepared fresh daily using the finest ingredients.</p>
+    </div>
+
+    <div class="carousel-wrapper">
+      <button class="carousel-btn prev" id="prevBtn">&#8592;</button>
+      <div class="carousel-scene" id="carouselScene">
+        <div class="carousel-3d" id="carousel3d">
+
+          <div class="menu-card" data-index="0">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-icon">☕</div>
+                <h3>Espresso</h3>
+                <p>Rich, bold, and perfectly extracted single shot.</p>
+                <div class="card-price">$2.50</div>
+              </div>
+              <div class="card-back">
+                <h3>Espresso</h3>
+                <ul>
+                  <li>🫘 Single Origin Beans</li>
+                  <li>🌡️ 93°C Brew Temp</li>
+                  <li>⏱️ 25s Extraction</li>
+                  <li>💪 High Caffeine</li>
+                </ul>
+                <button class="add-btn" onclick="addToOrder('Espresso', 2.50)">Add to Order</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card" data-index="1">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-icon">🍵</div>
+                <h3>Caramel Latte</h3>
+                <p>Velvety steamed milk with rich caramel drizzle.</p>
+                <div class="card-price">$4.50</div>
+              </div>
+              <div class="card-back">
+                <h3>Caramel Latte</h3>
+                <ul>
+                  <li>🥛 Whole Milk Foam</li>
+                  <li>🍯 House Caramel</li>
+                  <li>☕ Double Shot</li>
+                  <li>🌿 Oat Milk Option</li>
+                </ul>
+                <button class="add-btn" onclick="addToOrder('Caramel Latte', 4.50)">Add to Order</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card" data-index="2">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-icon">🥐</div>
+                <h3>Butter Croissant</h3>
+                <p>Flaky, golden layers baked fresh every morning.</p>
+                <div class="card-price">$3.00</div>
+              </div>
+              <div class="card-back">
+                <h3>Butter Croissant</h3>
+                <ul>
+                  <li>🧈 French Butter</li>
+                  <li>🌾 Artisan Flour</li>
+                  <li>🔥 Baked at 6AM</li>
+                  <li>🥚 Free Range Eggs</li>
+                </ul>
+                <button class="add-btn" onclick="addToOrder('Butter Croissant', 3.00)">Add to Order</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card" data-index="3">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-icon">🧁</div>
+                <h3>Velvet Muffin</h3>
+                <p>Moist red velvet muffin with cream cheese center.</p>
+                <div class="card-price">$2.75</div>
+              </div>
+              <div class="card-back">
+                <h3>Velvet Muffin</h3>
+                <ul>
+                  <li>🍫 Dark Cocoa</li>
+                  <li>🧀 Cream Cheese</li>
+                  <li>🌹 Natural Red Color</li>
+                  <li>🍬 Low Sugar Option</li>
+                </ul>
+                <button class="add-btn" onclick="addToOrder('Velvet Muffin', 2.75)">Add to Order</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card" data-index="4">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-icon">🍫</div>
+                <h3>Mocha Delight</h3>
+                <p>Espresso meets dark chocolate in perfect harmony.</p>
+                <div class="card-price">$5.00</div>
+              </div>
+              <div class="card-back">
+                <h3>Mocha Delight</h3>
+                <ul>
+                  <li>🍫 70% Dark Choco</li>
+                  <li>☕ Triple Shot</li>
+                  <li>🥛 Steamed Milk</li>
+                  <li>❄️ Iced Option</li>
+                </ul>
+                <button class="add-btn" onclick="addToOrder('Mocha Delight', 5.00)">Add to Order</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card" data-index="5">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-icon">🍰</div>
+                <h3>Cheesecake Slice</h3>
+                <p>New York style with a buttery graham cracker crust.</p>
+                <div class="card-price">$5.50</div>
+              </div>
+              <div class="card-back">
+                <h3>Cheesecake Slice</h3>
+                <ul>
+                  <li>🧀 Philadelphia Cream</li>
+                  <li>🍓 Berry Compote</li>
+                  <li>🌾 Graham Crust</li>
+                  <li>🥚 Free Range Eggs</li>
+                </ul>
+                <button class="add-btn" onclick="addToOrder('Cheesecake Slice', 5.50)">Add to Order</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <button class="carousel-btn next" id="nextBtn">&#8594;</button>
+    </div>
+
+    <div class="carousel-dots" id="carouselDots"></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="about-visual reveal">
+      <div class="about-img-box">
+        <div class="about-img-inner">
+          <div class="about-badge">Since 2010</div>
+          <div class="about-img-placeholder">☕</div>
+        </div>
+      </div>
+    </div>
+    <div class="about-text reveal">
+      <span class="section-tag">Our Story</span>
+      <h2>More Than Just Coffee</h2>
+      <p>Born from a passion for exceptional coffee and warm hospitality, The Cozy Cafe has been a neighborhood staple for over a decade. We source our beans directly from sustainable farms across Ethiopia, Colombia, and Guatemala.</p>
+      <p>Every cup is a craft. Every visit, a memory.</p>
+      <div class="about-features">
+        <div class="feature"><span>🌱</span> Sustainably Sourced</div>
+        <div class="feature"><span>🏆</span> Award Winning</div>
+        <div class="feature"><span>❤️</span> Community First</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="section-header reveal">
+      <span class="section-tag">What People Say</span>
+      <h2>Loved by Thousands</h2>
+    </div>
+    <div class="testimonials-track" id="testimonialsTrack">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"The best espresso I've ever had. The atmosphere is warm and the staff is incredibly welcoming."</p>
+        <div class="reviewer"><div class="avatar">S</div><span>Sarah M.</span></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"I come here every morning. The croissants are unbelievably fresh and the caramel latte is divine."</p>
+        <div class="reviewer"><div class="avatar">J</div><span>James K.</span></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"A hidden gem. The mocha delight changed my life. I can't imagine starting my day anywhere else."</p>
+        <div class="reviewer"><div class="avatar">A</div><span>Aisha R.</span></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"Perfect place to work remotely. Great WiFi, amazing coffee, and the cheesecake is to die for."</p>
+        <div class="reviewer"><div class="avatar">D</div><span>David L.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="section-header reveal">
+      <span class="section-tag">Find Us</span>
+      <h2>Come Visit Us</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="info-item"><span>📍</span><div><strong>Address</strong><p>123 Brew Street, Coffee Town, CT 06001</p></div></div>
+        <div class="info-item"><span>📞</span><div><strong>Phone</strong><p>+1 (555) 123-4567</p></div></div>
+        <div class="info-item"><span>🕐</span><div><strong>Hours</strong><p>Mon–Fri: 7AM – 9PM<br/>Sat–Sun: 8AM – 10PM</p></div></div>
+        <div class="info-item"><span>✉️</span><div><strong>Email</strong><p>hello@cozycafe.com</p></div></div>
+      </div>
+      <form class="contact-form reveal" onsubmit="submitForm(event)">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="4" required></textarea>
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>☕ Cozy Cafe</h3>
+        <p>Crafting moments, one cup at a time.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 The Cozy Cafe. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ORDER CART -->
+  <div class="cart-bubble" id="cartBubble" onclick="toggleCart()">
+    🛒 <span id="cartCount">0</span>
+  </div>
+  <div class="cart-panel" id="cartPanel">
+    <h3>Your Order</h3>
+    <ul id="cartList"></ul>
+    <div class="cart-total">Total: $<span id="cartTotal">0.00</span></div>
+    <button class="btn-primary" onclick="checkout()">Checkout</button>
+  </div>
+
+  <!-- RESERVATION MODAL -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <h2>Reserve a Table</h2>
+      <form onsubmit="submitReservation(event)">
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email Address" required />
+        <input type="date" required />
+        <input type="time" required />
+        <select>
+          <option>1 Guest</option>
+          <option>2 Guests</option>
+          <option>3–4 Guests</option>
+          <option>5+ Guests</option>
+        </select>
+        <button type="submit" class="btn-primary">Confirm Reservation</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
